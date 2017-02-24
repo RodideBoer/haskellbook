@@ -12,8 +12,11 @@ mayybee x _ Nothing  = x
 mayybee _ f (Just y) = f y
 
 fromMaybe :: a -> Maybe a -> a
-fromMaybe x Nothing  = x
-fromMaybe _ (Just y) = y
+fromMaybe x = mayybee x id
+
+fromMaybe' :: a -> Maybe a -> a
+fromMaybe' x Nothing  = x
+fromMaybe' _ (Just y) = y
 
 listToMaybe :: [a] -> Maybe a
 listToMaybe []    = Nothing
