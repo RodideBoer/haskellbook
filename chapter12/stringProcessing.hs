@@ -21,3 +21,12 @@ countTheBeforeVowel s = go 0 $ map notThe (words s)
           go acc (x1:(xs@(x2:_))) = go (if isTheBeforeVowel x1 x2 then acc + 1 else acc) xs
           isTheBeforeVowel Nothing (Just b) = elem (head b) vowels
           isTheBeforeVowel _ _              = False
+
+countVowels :: String -> Integer
+countVowels s = fromIntegral $ length $ getVowels s 
+
+isVowel :: Char -> Bool
+isVowel c = elem c vowels
+
+getVowels :: String -> String
+getVowels = filter isVowel
