@@ -19,9 +19,13 @@ listToMaybe :: [a] -> Maybe a
 listToMaybe []    = Nothing
 listToMaybe (x:_) = Just x
 
+-- make use of earlier functions
 maybeToList :: Maybe a -> [a]
-maybeToList Nothing  = []
-maybeToList (Just x) = [x]
+maybeToList = mayybee [] (:[])
+
+maybeToList' :: Maybe a -> [a]
+maybeToList' Nothing  = []
+maybeToList' (Just x) = [x]
 
 catMaybes :: [Maybe a] -> [a]
 catMaybes = foldr ((++) . maybeToList) []
