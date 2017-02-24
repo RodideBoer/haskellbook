@@ -1,0 +1,34 @@
+8.2
+applyTimes 0 f b = b
+applyTimes n f b = f (applyTimes (n-1) f b)
+
+applyTimes 5 (+1) 5
+
+(+1) (applyTimes 4 (+1) 5)
+(+1) ((+1) (applyTimes 3 (+1) 5))
+(+1) ((+1) ((+1) (applyTimes 2 (+1) 5)))
+(+1) ((+1) ((+1) ((+1) (applyTimes 1 (+1) 5))))
+(+1) ((+1) ((+1) ((+1) ((+1) (applyTimes 0 (+1) 5)))))
+(+1) ((+1) ((+1) ((+1) ((+1) (5)))))
+(+1) ((+1) ((+1) ((+1) (6))))
+(+1) ((+1) ((+1) (7)))
+(+1) ((+1) (8))
+(+1) (9)
+10
+
+8.6
+dividedBy :: Integral a => a -> a -> (a, a)
+dividedBy num denom = go num denom 0
+    where go n d count
+        | n < d = (count, n)
+        | otherwise = go (n - d) d (count + 1)
+
+dividedBy 15 2 = go 15 2 0
+    | otherwise = go 13 2 1
+        | otherwise = go 11 2 2
+            | otherwise = go 9 2 3
+                | otherwise = go 7 2 4
+                    | otherwise = go 5 2 5
+                        | otherwise = go 3 2 6
+                            | otherwise = go 1 2 7
+                                | 1 < 2 = (7, 1)

@@ -1,0 +1,14 @@
+Correcting syntax
+2. \ x -> x
+    (\ x -> x) 2
+
+3. \ xs -> head xs
+    (\ x : xs -> x) [1,2,3]
+
+4. f (a,b) = a
+
+Match the function names to their types
+1. c
+2. b
+3. a
+4. d

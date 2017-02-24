@@ -1,0 +1,71 @@
+2.4
+1.
+let half x = x / 2
+let square x = x * x
+
+2.
+circleArea r = 3.14 * (r * r)
+
+2.5
+1. yes
+2. no
+3. yes
+
+2.6
+1. let area x = 3.14 * (x * x)
+2. let double x = x * 2
+3. x = 7
+   y = 10
+   f = x + y
+
+2.12
+1. let x = 3; y = 1000 in x * 3 + y
+f = x * 3 + y where
+    x = 3
+    y = 1000
+2. let y = 10; x = 10 * 5 + y in x * 5
+f = x * 5 where
+    x = 10 * 5 + y
+    y = 10
+3. let x = 7; y = negate x; z = y * 10 in z / x + y
+f = z / x + y where
+    x = 7
+    y = negate x
+    z = y * 10
+
+Exercises
+
+Parenthesization
+1. 1 + 2 * 3 - 1
+    1 + (2 * 3) - 1
+2. (^) 10 $ 1 + 1
+    (^) 10 (1 + 1)
+3. 2 ^ 2 * 4 ^ 5 + 1
+    ((2 ^ 2) * (4 ^ 5)) + 1
+
+Equivalent Expressions
+1. yes
+2. yes
+3. no
+4. no
+5. no
+
+Fun with functions
+let z = 7
+let y = z + 8
+let x = y ^ 2
+let waxOn = x * 5
+
+1. 1135
+    1135
+    -1110
+    1110
+3. 3375 triple is applied to waxOn, waxOn is 1125
+4.
+waxOn = x * 5
+    where
+        z = 7
+        y = z + 8
+        x = y ^ 2
+5.
+triple x = x * 3

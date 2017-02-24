@@ -1,0 +1,75 @@
+## Combinators
+1. true
+2. false
+3. true
+4. true
+5. false
+
+## Normal form or diverge
+1. normal
+2. diverge
+3. normal
+
+## Beta reduce
+1. (Labc.cba)zz(Lwv.w)
+	(La.Lb.Lc.cba)(z)(z)(Lw.Lv.w)
+	(Lb.Lc.cbz)(z)(Lw.Lv.w)
+	(Lc.czz)(Lw.Lv.w)
+	((Lw.Lv.w)zz)
+	((Lv.z)z)
+	z
+2. (Lx.Ly.xyy)(La.a)b
+	(Ly.(La.a)yy)b
+	(La.a)(b)(b)
+	bb
+3. (Ly.y)(Lx.xx)(Lz.zq)
+	(Lx.xx)(Lz.zq)
+	(Lz.zq)(Lz.zq)
+	(Lz.zq)q
+	qq
+4. (Lz.z)(Lz.zz)(Lz.zy)
+	(Lz.zz)(Lz.zy)
+	(Lz.zy)(Lz.zy)
+	(Lz.zy)y
+	yy
+5. (Lx.Ly.xyy)(Ly.y)y
+	(Ly.(Ly.y)yy)y
+	(Ly.y)yy
+	yy
+6. (La.aa)(Lb.ba)c
+	(Lb.ba)(Lb.ba)c
+	(Lb.ba)ac
+	aac
+7. (Lxyz.xz(yz))(Lx.z)(Lx.a)
+	(Lx.Ly.Lz.xz(yz))(Lx.z)(Lx.a)
+	(Ly.Lz1.(Lx.z)z1(yz1))(Lx.a)
+	(Lz1.(Lx.z)z1((Lx.a)z1))
+	(Lz1.z((Lx.a)z1))
+	(Lz1.z(a))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+5.4 Type arguments
+1. a
+2. d
+3. d
+4. c
+5. a
+6. e
+7. d WHY?
+8. a same as 7
+9. c
+
+Chapter exercises
+
+Multiple choice
+1. c
+2. a
+3. b? Not really to the letter and d sounds strange too; a and b definitely not
+4. d

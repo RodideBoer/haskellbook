@@ -1,0 +1,96 @@
+11.5
+1. type constructor
+2. * -> *
+3. *
+4. Num a => Doggies a
+5. Doggies Integer
+6. Doggies String
+7. both
+8. doge -> DogueDeBordeaux doge
+9. DogueDeBordeaux String
+
+11.8 Cardinality
+1. 1
+2. 3
+3. 65536 (fromIntegral (maxBound :: Int16) - fromIntegral (minBound :: Int16) + 1)
+4.  Int: 18446744073709551616
+    Integer: ?? Integer has no instance for the Bounded typeclass
+5. Number of bits that is used to store the value (2^8 = 256)
+
+11.8 For Example
+1. type of MakeExample? Example (MakeExample :: Example)
+    type of Example? Error, because Example is not a data constructor
+2. data Example = MakeExample
+    instance [safe] Show Example
+3. data MyInt = MakeMyInt Int deriving (Show)
+    type of MakeMyInt? MakeMyInt :: Int -> MyInt
+
+11.10 Pity the Bool
+1. Big Bool | Small Bool = ??
+    Big 2 | Small 2 = ??
+    2 + 2 = 4
+2. 256 + 2 = 258
+    let wayTooBig = Numba 200
+    -> Literal 200 is out of the Int8 range -128..127
+
+11.13
+1. data Garden = Gardenia Gardener
+               | Daisy Gardener
+               | Rose Gardener
+               | Lilac Gardener
+                    deriving (Show)
+
+11.14
+convert1 :: Quantum -> Bool
+convert1 Yes  = True
+convert1 No   = True
+convert1 Both = True
+
+convert2 :: Quantum -> Bool
+convert2 Yes  = True
+convert2 No   = True
+convert2 Both = False
+
+convert3 :: Quantum -> Bool
+convert3 Yes  = True
+convert3 No   = False
+convert3 Both = True
+
+convert4 :: Quantum -> Bool
+convert4 Yes  = True
+convert4 No   = False
+convert4 Both = False
+
+convert5 :: Quantum -> Bool
+convert5 Yes  = False
+convert5 No   = False
+convert5 Both = False
+
+convert6 :: Quantum -> Bool
+convert6 Yes  = False
+convert6 No   = False
+convert6 Both = True
+
+convert7 :: Quantum -> Bool
+convert7 Yes  = False
+convert7 No   = True
+convert7 Both = False
+
+convert8 :: Quantum -> Bool
+convert8 Yes  = False
+convert8 No   = True
+convert8 Both = True
+
+11.14 The Quad
+1. 4 + 4 = 8
+2. 4 * 4 = 16
+3. 4 ^ 4 = 256
+4. 2 * 2 * 2 = 8
+5. (2 ^ 2) ^ 2 = 8 (or 2 ^ (2 * 2))
+6. (4 ^ 4) ^ 2 = 65536 9or 4 ^ (4 * 2))
+
+11.18 Chapter Exercises
+1. a
+2. f :: Weekday -> String (or as it is in Prelude: f :: Weekday -> [Char])
+3. b
+4. c
