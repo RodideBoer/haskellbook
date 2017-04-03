@@ -1,6 +1,6 @@
 {-# LANGUAGE DeriveGeneric #-}
 
-module CoArbitrary where
+module Mytest where
 
 import GHC.Generics
 import Test.QuickCheck
