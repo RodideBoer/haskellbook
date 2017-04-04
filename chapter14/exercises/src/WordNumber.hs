@@ -2,23 +2,23 @@ module WordNumber where
 
 import Data.List (intersperse)
 
-digitToWord :: Int -> String
-digitToWord = concat . intersperse "-" . map wordNumber . digits
+wordNumber :: Int -> String
+wordNumber = concat . intersperse "-" . map digitToWord . digits
 
 digits :: Int -> [Int]
 digits n
   | n <= 0 = []
   | otherwise = digits (div n 10) ++ [mod n 10]
 
-wordNumber :: Int -> String
-wordNumber 0 = "zero"
-wordNumber 1 = "one"
-wordNumber 2 = "two"
-wordNumber 3 = "three"
-wordNumber 4 = "four"
-wordNumber 5 = "five"
-wordNumber 6 = "six"
-wordNumber 7 = "seven"
-wordNumber 8 = "eight"
-wordNumber 9 = "nine"
-wordNumber _ = "nodigit"
+digitToWord :: Int -> String
+digitToWord 0 = "zero"
+digitToWord 1 = "one"
+digitToWord 2 = "two"
+digitToWord 3 = "three"
+digitToWord 4 = "four"
+digitToWord 5 = "five"
+digitToWord 6 = "six"
+digitToWord 7 = "seven"
+digitToWord 8 = "eight"
+digitToWord 9 = "nine"
+digitToWord _ = "nodigit"
