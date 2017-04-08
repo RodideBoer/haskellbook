@@ -1,3 +1,5 @@
+{-# LANGUAGE FlexibleContexts #-}
+
 module UsingQuickCheck where
 
 import Test.Hspec
@@ -27,7 +29,7 @@ listOrdered xs =
   snd $ foldr go (Nothing, True) xs
   where go _ status@(_, False) = status
         go y (Nothing, t) = (Just y, t)
-        go y (Just x, t) = (Just y, x >= y)
+        go y (Just x, _) = (Just y, x >= y)
 
 -- For exercie 3 I will use hspec to describe both properties
 -- in a single function
@@ -62,3 +64,15 @@ isAssociative f x y z = x `f` (y `f` z) == (x `f` y) `f` z
 
 isCommutative :: (Int -> Int -> Int) -> Int -> Int-> Bool
 isCommutative f x y = x `f` y == y `f` x
+
+run5 :: IO ()
+run5 = hspec $ do
+  describe "Laws for relationships between qout/rem and div/mod" $ do
+    it "quot related to rem" $ do
+      property $ \x y ->
+        y == 0
+        || (quot x y) * y + (rem (x :: Int) (y :: Int)) == x
+    it "div related to mod" $ do
+      property $ \x y ->
+        y == 0
+        || (div x y) * y + (mod (x :: Int) (y :: Int)) == x
