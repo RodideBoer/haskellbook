@@ -76,3 +76,11 @@ run5 = hspec $ do
       property $ \x y ->
         y == 0
         || (div x y) * y + (mod (x :: Int) (y :: Int)) == x
+
+run6 :: IO ()
+run6 = hspec $ do
+  describe "Power" $ do
+    it "is associative" $ do
+      property $ isAssociative (^)
+    it "is commutative" $ do
+      property $ isCommutative (^)
