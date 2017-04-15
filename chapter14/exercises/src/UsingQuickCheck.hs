@@ -84,3 +84,37 @@ run6 = hspec $ do
       property $ isAssociative (^)
     it "is commutative" $ do
       property $ isCommutative (^)
+
+run7 :: IO ()
+run7 = quickCheck propDoubleReverse
+
+propDoubleReverse :: String -> Bool
+propDoubleReverse s = (reverse . reverse) s == id s
+
+run8 :: IO ()
+run8 = do
+  quickCheck (propDollarSign reverse :: String -> Bool)
+  quickCheck (propComposition reverse sort :: String -> Bool)
+
+propDollarSign :: Eq b => (a -> b) -> a -> Bool
+propDollarSign f a = (f $ a) == f a
+
+propComposition :: Eq c => (b -> c) -> (a -> b) -> a -> Bool
+propComposition f g x = (f . g) x == f (g x)
+
+run9 :: IO ()
+run9 = do
+  quickCheck (\x y -> foldr (:) x y == (++) (x :: String) (y :: String) :: Bool)
+  quickCheck (\x -> foldr (++) [] x == concat (x :: [[Int]]) :: Bool)
+
+run10 :: IO ()
+run10 = quickCheck f10
+
+f10 :: Int -> String -> Bool
+f10 n xs = length (take n xs) == n
+
+run11 :: IO ()
+run11 = quickCheck f11
+
+f11 :: String -> Bool
+f11 x = (read (show x)) == x
