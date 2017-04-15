@@ -17,6 +17,7 @@ library
                      , UsingQuickCheck
                      , Failure
                      , Idempotence
+                     , FoolGen
   hs-source-dirs:      src
   ghc-options:         -Wall -fwarn-tabs
   default-language:    Haskell2010
