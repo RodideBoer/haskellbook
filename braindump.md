@@ -10,3 +10,8 @@ They are somewhat comparable to Object Oriented concepts:
 * A Typeclass is like an Interface (abstraction)
 * A Type is like a Class
 * An Instance is like the implementation of an Interface in a specific Class
+
+### Algebraic structures (Important typeclasses)
+
+#### Monoid
+A monoid is a binary associative operation (=function) with an identity (element)
